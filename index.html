@@ -1,3 +1,13 @@
+<script type="text/javascript">
+	atOptions = {
+		'key' : '0702b151uh5u2EEmEQJYMWrSnScCB1LQSyPMmsf',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/0702b151uh5u2EEmEQJYMWrSnScCB1LQSyPMmsf/invoke.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,26 +29,13 @@
             animation: gradient-flow 18s ease infinite;
             text-align: center;
             margin: 0;
-            padding: 80px 20px 20px 20px;
+            /* Padding restored to original state */
+            padding: 20px;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
             min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        .ad-container-top {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(2px);
-            padding: 5px 0;
-            z-index: 99;
         }
 
         @keyframes gradient-flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -57,7 +54,7 @@
         }
         
         #flower-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; }
-        .flower { position: absolute; top: -10%; font-size: 20px; animation: fall linear infinite; color: #ff9800; /* Added color for better visibility */ }
+        .flower { position: absolute; top: -10%; font-size: 20px; animation: fall linear infinite; color: #ff9800; }
         @keyframes fall { 100% { transform: translateY(110vh) rotate(360deg); } }
         
         .greeting-heading { font-family: 'Cinzel Decorative', serif; font-size: 2.8em; line-height: 1.2; color: #FFD700; text-shadow: 0px 1px 1px #a28302, 0px 2px 1px #a28302, 0px 3px 1px #a28302, 0px 4px 1px #a28302, 0px 5px 1px #a28302, 0px 6px 1px #a28302, 0px 7px 10px rgba(0, 0, 0, 0.5); animation: royal-pulse 3s ease-in-out infinite alternate; margin-bottom: 15px; }
@@ -85,19 +82,6 @@
     </style>
 </head>
 <body>
-    <div class="ad-container-top">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '0702b151J3PF8ao4YsdKxWBSLYe8B8rpxGNuTV1',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/0702b151J3PF8ao4YsdKxWBSLYe8B8rpxGNuTV1/invoke.js"></script>
-    </div>
-
     <div id="flower-container"></div>
     <div class="container">
         <h1 id="greetingHeading" class="greeting-heading"></h1>
@@ -105,7 +89,7 @@
         <div id="inputContainer" class="input-container">
             <p>1. Enter your name to create a wish:</p>
             <input type="text" id="nameInput" class="name-input" placeholder="Your Name...">
-            <button id="generateBtn" class="generate-button">? Generate My Wish</button>
+            <button id="generateBtn" class="generate-button">✨ Generate My Wish</button>
         </div>
         <div id="shareContainer" class="share-container">
             <p style="font-size: 1.3em; color: #4a2c0f; margin-bottom: 15px;">2. Share your divine wish via:</p>
@@ -125,8 +109,7 @@
         function createFlowers(count) {
             const container = document.getElementById('flower-container');
             if (!container) return;
-            // **UPDATED**: Using universal symbols instead of emojis
-            const flowerTypes = ['?', '*', '•', '?'];
+            const flowerTypes = ['✲', '*', '•', '❉'];
             for (let i = 0; i < count; i++) {
                 const flower = document.createElement('div');
                 flower.classList.add('flower');
@@ -174,7 +157,7 @@
             document.getElementById('shareContainer').style.display = 'flex';
         });
         
-        const shareMessage = "Sending you divine blessings for a very Happy Nagara Panchami! ? Check out my wish: ";
+        const shareMessage = "Sending you divine blessings for a very Happy Nagara Panchami! ✨ Check out my wish: ";
         
         document.getElementById('whatsapp-btn').addEventListener('click', function() {
             const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage + generatedUrl)}`;
