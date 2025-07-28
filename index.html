@@ -19,7 +19,6 @@
             animation: gradient-flow 18s ease infinite;
             text-align: center;
             margin: 0;
-            /* **UPDATED**: Added padding-top to make space for the ad banner */
             padding: 80px 20px 20px 20px;
             box-sizing: border-box;
             display: flex;
@@ -28,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* --- **NEW** Styles for the Top Ad Container --- */
         .ad-container-top {
             position: fixed;
             top: 0;
@@ -59,7 +57,7 @@
         }
         
         #flower-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; }
-        .flower { position: absolute; top: -10%; font-size: 20px; animation: fall linear infinite; }
+        .flower { position: absolute; top: -10%; font-size: 20px; animation: fall linear infinite; color: #ff9800; /* Added color for better visibility */ }
         @keyframes fall { 100% { transform: translateY(110vh) rotate(360deg); } }
         
         .greeting-heading { font-family: 'Cinzel Decorative', serif; font-size: 2.8em; line-height: 1.2; color: #FFD700; text-shadow: 0px 1px 1px #a28302, 0px 2px 1px #a28302, 0px 3px 1px #a28302, 0px 4px 1px #a28302, 0px 5px 1px #a28302, 0px 6px 1px #a28302, 0px 7px 10px rgba(0, 0, 0, 0.5); animation: royal-pulse 3s ease-in-out infinite alternate; margin-bottom: 15px; }
@@ -87,18 +85,17 @@
     </style>
 </head>
 <body>
-    <!-- **NEW**: Top Ad Container -->
     <div class="ad-container-top">
         <script type="text/javascript">
             atOptions = {
-                'key' : '0702b151Q6CGgTNkeVz5sT61EtbyoBvb5u5BcJ1',
+                'key' : '0702b151J3PF8ao4YsdKxWBSLYe8B8rpxGNuTV1',
                 'format' : 'iframe',
                 'height' : 60,
                 'width' : 468,
                 'params' : {}
             };
         </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/0702b151Q6CGgTNkeVz5sT61EtbyoBvb5u5BcJ1/invoke.js"></script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/0702b151J3PF8ao4YsdKxWBSLYe8B8rpxGNuTV1/invoke.js"></script>
     </div>
 
     <div id="flower-container"></div>
@@ -120,8 +117,82 @@
         </div>
     </div>
     <script>
-        // All JavaScript is exactly the same
-        let generatedUrl = '';const headingElement = document.getElementById('greetingHeading');const urlParams = new URLSearchParams(window.location.search);const senderName = urlParams.get('name');function createFlowers(count) {const container = document.getElementById('flower-container');if (!container) return;const flowerTypes = ['??', '??', '??', '???', '??'];for (let i = 0; i < count; i++) {const flower = document.createElement('div');flower.classList.add('flower');flower.textContent = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];flower.style.left = Math.random() * 100 + 'vw';flower.style.animationDuration = (Math.random() * 5 + 8) + 's';flower.style.animationDelay = Math.random() * 7 + 's';flower.style.fontSize = (Math.random() * 10 + 15) + 'px';container.appendChild(flower);}}function launchFireworks() {var duration = 5 * 1000;var animationEnd = Date.now() + duration;var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };function randomInRange(min, max) {return Math.random() * (max - min) + min;}var interval = setInterval(function() {var timeLeft = animationEnd - Date.now();if (timeLeft <= 0) {return clearInterval(interval);}var particleCount = 50 * (timeLeft / duration);confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 },colors: ['#FFD700', '#FF4500', '#FFFFFF'], drift: randomInRange(-0.5, 0.5)}));}, 300);}window.onload = function() {if (senderName) {headingElement.innerHTML = `Happy Nagara Panchami<span class="from-name">- from ${decodeURIComponent(senderName)} -</span>`;createFlowers(90);launchFireworks();} else {headingElement.innerHTML = 'Happy Nagara Panchami';}};document.getElementById('generateBtn').addEventListener('click', function() {const name = document.getElementById('nameInput').value.trim();if (name === "") {alert("Please enter your name to create your wish!");return;}const baseUrl = window.location.origin + window.location.pathname;generatedUrl = `${baseUrl}?name=${encodeURIComponent(name)}`;document.getElementById('inputContainer').style.display = 'none';document.getElementById('shareContainer').style.display = 'flex';});const shareMessage = "Sending you divine blessings for a very Happy Nagara Panchami! ? Check out my wish: ";document.getElementById('whatsapp-btn').addEventListener('click', function() {const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage + generatedUrl)}`;window.open(whatsappUrl, '_blank');});document.getElementById('facebook-btn').addEventListener('click', function() {const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(generatedUrl)}`;window.open(facebookUrl, '_blank');});document.getElementById('copy-btn').addEventListener('click', function() {navigator.clipboard.writeText(generatedUrl).then(function() {alert('Link copied to clipboard!');}, function() {alert('Could not copy link.');});});
+        let generatedUrl = '';
+        const headingElement = document.getElementById('greetingHeading');
+        const urlParams = new URLSearchParams(window.location.search);
+        const senderName = urlParams.get('name');
+        
+        function createFlowers(count) {
+            const container = document.getElementById('flower-container');
+            if (!container) return;
+            // **UPDATED**: Using universal symbols instead of emojis
+            const flowerTypes = ['?', '*', '•', '?'];
+            for (let i = 0; i < count; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('flower');
+                flower.textContent = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                flower.style.animationDelay = Math.random() * 7 + 's';
+                flower.style.fontSize = (Math.random() * 10 + 15) + 'px';
+                container.appendChild(flower);
+            }
+        }
+
+        function launchFireworks() {
+            var duration = 5 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) { return clearInterval(interval); }
+                var particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 }, colors: ['#FFD700', '#FF4500', '#FFFFFF'], drift: randomInRange(-0.5, 0.5) }));
+            }, 300);
+        }
+
+        window.onload = function() {
+            if (senderName) {
+                headingElement.innerHTML = `Happy Nagara Panchami<span class="from-name">- from ${decodeURIComponent(senderName)} -</span>`;
+                createFlowers(90);
+                launchFireworks();
+            } else {
+                headingElement.innerHTML = 'Happy Nagara Panchami';
+            }
+        };
+
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name === "") {
+                alert("Please enter your name to create your wish!");
+                return;
+            }
+            const baseUrl = window.location.origin + window.location.pathname;
+            generatedUrl = `${baseUrl}?name=${encodeURIComponent(name)}`;
+            document.getElementById('inputContainer').style.display = 'none';
+            document.getElementById('shareContainer').style.display = 'flex';
+        });
+        
+        const shareMessage = "Sending you divine blessings for a very Happy Nagara Panchami! ? Check out my wish: ";
+        
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage + generatedUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        document.getElementById('facebook-btn').addEventListener('click', function() {
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(generatedUrl)}`;
+            window.open(facebookUrl, '_blank');
+        });
+
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            navigator.clipboard.writeText(generatedUrl).then(function() {
+                alert('Link copied to clipboard!');
+            }, function() {
+                alert('Could not copy link.');
+            });
+        });
     </script>
 </body>
 </html>
